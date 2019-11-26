@@ -123,12 +123,3 @@ func consumer(queue *ThreadSafeQueue) {
 		time.Sleep(time.Second * 1)
 	}
 }
-
-func main() {
-	queue := NewThreadSafeQueue(0)
-
-	go producer(queue)
-	go consumer(queue)
-
-	time.Sleep(time.Second * 5000)
-}
